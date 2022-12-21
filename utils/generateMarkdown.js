@@ -29,18 +29,27 @@ const generateReadMe = (answers) => {
   
 
   # Installation
+
+  ${answers.install}
   
   # Usage
+
+  ${answers.usage}
 
   # License
   
   # Contributing
+
+  ${answers.contribute}
   
   # Tests
 
+  ${answers.test}
+
+
   # Questions
 
-  For any questions, please reach out to me on GitHub at ${answers.github}, or email me at ${answers.email}!
+  For any questions, please reach out to me on GitHub at [${answers.github}](https://github.com/${answers.github}), or email me at ${answers.email}!
   `;
 }
 
@@ -61,6 +70,22 @@ prompt([
   {
     message: 'Please enter a description for your project',
     name: 'description'
+  },
+  {
+    message: 'Please enter installation instructions for your project',
+    name: 'install'
+  },
+  {
+    message: 'Please enter usage information for your project',
+    name: 'usage'
+  },
+  {
+    message: 'Please enter contribution guidelines for your project',
+    name: 'contribute'
+  },
+  {
+    message: 'Please enter test instructions for your project',
+    name: 'test'
   },
   {
     message: 'Please enter your GitHub Account',
