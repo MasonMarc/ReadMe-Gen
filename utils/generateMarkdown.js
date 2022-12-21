@@ -39,6 +39,8 @@ const generateReadMe = (answers) => {
   # Tests
 
   # Questions
+
+  For any questions, please reach out to me on GitHub at ${answers.github}, or email me at ${answers.email}!
   `;
 }
 
@@ -59,6 +61,14 @@ prompt([
   {
     message: 'Please enter a description for your project',
     name: 'description'
+  },
+  {
+    message: 'Please enter your GitHub Account',
+    name: 'github'
+  },
+  {
+    message: 'Please enter your email address',
+    name: 'email'
   }
   ])
 
