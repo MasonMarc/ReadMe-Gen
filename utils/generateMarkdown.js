@@ -2,7 +2,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 
-// TODO: Create a function to generate markdown for README
 const generateReadMe = (answers) => {
   return `# ${answers.title}
   
@@ -52,7 +51,7 @@ const generateReadMe = (answers) => {
   `;
 }
 
-const writeToFile = (md) => {
+const saveFile = (md) => {
     fs.writeFileSync('readme.md', md);   
 }
 
@@ -83,6 +82,10 @@ prompt([
     name: 'test'
   },
   {
+    message: 'Please enter License used',
+    name: 'license'
+  },
+  {
     message: 'Please enter your GitHub Account',
     name: 'github'
   },
@@ -93,4 +96,4 @@ prompt([
   ])
 
 .then(generateReadMe)
-.then(writeToFile)
+.then(saveFile)
