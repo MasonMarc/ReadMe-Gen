@@ -3,6 +3,7 @@ const fs = require('fs');
 
 
 const generateReadMe = (answers) => {
+  chooseLicense(answers);
   return `# ${answers.title}
   
   # Descriptions
@@ -35,6 +36,8 @@ const generateReadMe = (answers) => {
   ${answers.usage}
   
   # License
+
+  ${answers.license} : ` + liLink + `
   
   # Contributing
   
@@ -53,6 +56,27 @@ const generateReadMe = (answers) => {
 
 const saveFile = (md) => {
     fs.writeFileSync('readme.md', md);   
+}
+
+let liLink = '';
+
+const chooseLicense = (answers) => {
+  if (answers.license == 'Mozilla') {
+    liLink = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+  } 
+  else if (answers.license == 'MIT') {
+    liLink = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+}
+  else if (answers.license == 'Creative Commons') {
+    liLink = '[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)';
+}
+  else if (answers.license == 'Boost') {
+    liLink = '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
+}
+  else if (answers.license == 'Apache') {
+    liLink = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+}
+return liLink;
 }
 
 const prompt = inquirer.createPromptModule();
@@ -82,7 +106,9 @@ prompt([
     name: 'test'
   },
   {
-    message: 'Please enter License used',
+    type: 'list',
+    message: 'Please choose License used',
+    choices: ['Apache', 'Boost', 'Creative Commons', 'MIT', 'Mozilla'],
     name: 'license'
   },
   {
@@ -97,3 +123,8 @@ prompt([
 
 .then(generateReadMe)
 .then(saveFile)
+
+
+// Video
+// License
+
