@@ -1,8 +1,8 @@
-# ReadMe Gen
+# ReadMe Generator
   
   # Descriptions
   
-  readme generator made in nodejs using npm and inquirer to prompt user
+  ReadMe generator made with js using nodejs and npm with inquirer to allow for user entered info to make a readme
   
   # Table of Contents
   
@@ -23,11 +23,11 @@
   
   # Installation
   
-  install nodejs and run npm i in the terminal
+  install nodejs and npm inquirer to run this project
   
   # Usage
   
-  run node generateMarkdown.js and then follow the prompts to use
+  to use, after installing, run nodejs on the file and follow the user prompts to fill out your readme. It will be saved to the file you are in afterwards
   
   # License
 
@@ -35,11 +35,11 @@
   
   # Contributing
   
-  please contribute by adding quieries the user could answer and supplementing the readme with a better template
+  to contribute, please ensure you are following correct procedures
   
   # Tests
   
-  test by entering various values into the prompts
+  to test, please enter random values when prompted by the terminal
   
   
   # Questions

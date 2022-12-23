@@ -8,17 +8,11 @@ ReadMe Generator using Node.js
 
 [Descriptions](#descriptions)
 
-[Visuals](#visuals)
-
 [Resources](#resources)
 
 # Descriptions
 
 This project is a ReadMe generator using Node.js to make a readme based on user answered prompts
-
-# Visuals
-
-![demo video]()
 
 # Resources
 
